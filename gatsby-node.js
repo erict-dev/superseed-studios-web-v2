@@ -7,7 +7,8 @@ exports.createPages = ({ actions, graphql }) => {
 
   return graphql(`
     {
-      allMarkdownRemark(limit: 1000) {
+      allMarkdownRemark( 
+      filter: { fileAbsolutePath: { regex: "/pages/"} } ) {
         edges {
           node {
             id
@@ -15,7 +16,6 @@ exports.createPages = ({ actions, graphql }) => {
               slug
             }
             frontmatter {
-              tags
               templateKey
             }
           }

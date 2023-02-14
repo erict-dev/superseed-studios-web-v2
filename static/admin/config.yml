@@ -13,6 +13,35 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "services"
+    label: "Services"
+    folder: "src/data/services"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "services-item",
+        }
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Image", name: "image", widget: file}
+  - name: "social"
+    label: "Social Links"
+    folder: "src/data/footer-social"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "footer-social",
+        }
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Link", name: "link", widget: "string"}
+      - {label: "Icon", name: "icon", widget: file}
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
@@ -125,14 +154,13 @@ collections:
         label: "About"
         name: "about"
         fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "about-page",
-            }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: Pitch, name: pitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}]}
+          - {label: "Secondary Pitch", name: secondaryPitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}]}
+          - {label: Services, name: services, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}]}
+          - {label: Profile, name: profile, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}, {label: Name, name: name, widget: text}, {label: Role, name: role, widget: text}, {label: Image, name: image, widget: image} ]}
+
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"

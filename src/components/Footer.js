@@ -1,114 +1,61 @@
-import * as React from "react";
-import { Link } from "gatsby";
+import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
 
-import logo from "../img/logo.svg";
-import facebook from "../img/social/facebook.svg";
-import instagram from "../img/social/instagram.svg";
-import twitter from "../img/social/twitter.svg";
-import vimeo from "../img/social/vimeo.svg";
+const data = [
+  {
+    title: 'Facebook',
+    link: 'https://www.facebook.com/superseedstudios',
+    icon: 'img/facebook-icon.svg',
+  },
+  {
+    title: 'Twitter',
+    link: 'https://www.twitter.com/superseedstudios',
+    icon: 'img/twitter-icon.svg',
+  },
+  {
+    title: 'Instagram',
+    link: 'https://www.instagram.com/superseedstudios',
+    icon: 'img/instagram-icon.svg',
+  },
+  {
+    title: 'Vimeo',
+    link: 'https://www.vimeo.com/superseedstudios',
+    icon: 'img/vimeo-icon.svg',
+  },
+  {
+    title: 'LinkedIn',
+    link: 'https://www.linkedin.com/company/superseed-studios',
+    icon: 'img/linkedin-icon.png',
+  },
 
-const Footer = () => {
-  
+
+]
+
+const Footer = class extends React.Component {
+  render() {
+    console.log('footer data', {data})
     return (
-      <footer className="footer has-background-black has-text-white-ter">
-        <div className="content has-text-centered">
-          <img
-            src={logo}
-            alt="Kaldi"
-            style={{ width: "14em", height: "10em" }}
-          />
-        </div>
-        <div className="content has-text-centered has-background-black has-text-white-ter">
-          <div className="container has-background-black has-text-white-ter">
-            <div style={{ maxWidth: "100vw" }} className="columns">
-              <div className="column is-4">
-                <section className="menu">
-                  <ul className="menu-list">
-                    <li>
-                      <Link to="/" className="navbar-item">
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/about">
-                        About
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/products">
-                        Products
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact/examples">
-                        Form Examples
-                      </Link>
-                    </li>
-                    <li>
-                      <a
-                        className="navbar-item"
-                        href="/admin/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Admin
-                      </a>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link className="navbar-item" to="/blog">
-                        Latest Stories
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact">
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4 social">
-                <a title="facebook" href="https://facebook.com">
-                  <img
-                    src={facebook}
-                    alt="Facebook"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-                <a title="twitter" href="https://twitter.com">
-                  <img
-                    className="fas fa-lg"
-                    src={twitter}
-                    alt="Twitter"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-                <a title="instagram" href="https://instagram.com">
-                  <img
-                    src={instagram}
-                    alt="Instagram"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-                <a title="vimeo" href="https://vimeo.com">
-                  <img
-                    src={vimeo}
-                    alt="Vimeo"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
+      <footer className="footer">
+        <div className="footer-content content has-text-centered">
+          <div className="container">
+            <div className="columns">
+              <div className="column social">
+                {data.map((d) => (
+                  <a title={d.title} href={d.link}>
+                    <img
+                      src={d.icon}
+                      alt={d.title}
+                      style={{ width: '1em', height: '1em' }}
+                    />
+                  </a>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </footer>
-    );
-};
+    )
+  }
+}
 
-export default Footer;
+export default Footer

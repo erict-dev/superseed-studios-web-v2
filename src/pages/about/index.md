@@ -1,19 +1,47 @@
 ---
-templateKey: 'about-page'
-path: /about
-title: About our values
+templateKey: about-page
+title: About
+pitch:
+  description: >
+    Our core pillars here at Superseed Studios are collaboration, communication,
+    and high quality work. These values have been core to our studio since the
+    very beginning and define our company and the way we work. From our
+    commitment to delivering an exceptional project for our clients to our
+    internal company culture you will see these values shine through in
+    everything we do.
+  title: Our values
+secondaryPitch:
+  description: >
+    We are here to provide our clients with a creative professional partner that
+    they can rely on to bring their ideas to life, and impress their customers
+    with work that evokes emotion and engagement. We are also committed to
+    providing our team with meaningful work that will allow them to exercise
+    their creative ideas and bring out their best. 
+  title: Our mission
+services:
+  description: >
+    We offer a wide range of animation services for our clients including: video
+    game animation, cinematics, 3D character rigging, VFX for film and movies,
+    animated features, commercials and promos, trailers and previews. We also
+    work with clients who need help implementing animations directly into game
+    engines such as Unity, Unreal, or a custom game engine.
+  title: Our services
+profile:
+  description: >
+    Jason is the owner and founder of Superseed Studios. Since graduating from
+    Vancouver film school, he's amassed over 20 years of experience in the
+    animation industry. He has an impressive portfolio of projects under his
+    belt including work on League of Legends, Diablo 4, Heroes of the Storm, The
+    Order 1886, Mercenaries, and many more titles. Throughout his career in
+    animation, Jason has successfully served key roles across industry leading
+    studios including Blizzard Entertainment, Riot Games, EA Games, Ready at
+    Dawn and Blur Studios. His professional experience has spanned from senior
+    and lead animation roles, to supervising animation outsourcing and leading
+    animation teams at some of the largest and most successful video game
+    studios today.
+  image: /img/profile-img.png
+  name: Jason Shum
+  role: Owner | Animation Director
+  title: Leadership
 ---
-### Shade-grown coffee
-Coffee is a small tree or shrub that grows in the forest understory in its wild form, and traditionally was grown commercially under other trees that provided shade. The forest-like structure of shade coffee farms provides habitat for a great number of migratory and resident species.
 
-### Single origin
-Single-origin coffee is coffee grown within a single known geographic origin. Sometimes, this is a single farm or a specific collection of beans from a single country. The name of the coffee is then usually the place it was grown to whatever degree available.
-
-### Sustainable farming
-Sustainable agriculture is farming in sustainable ways based on an understanding of ecosystem services, the study of relationships between organisms and their environment. What grows where and how it is grown are a matter of choice and careful consideration for nature and communities.
-
-### Direct sourcing
-Direct trade is a form of sourcing practiced by some coffee roasters. Advocates of direct trade practices promote direct communication and price negotiation between buyer and farmer, along with systems that encourage and incentivize quality.
-
-### Reinvest profits
-We want to truly empower the communities that bring amazing coffee to you. That’s why we reinvest 20% of our profits into farms, local businesses and schools everywhere our coffee is grown. You can see the communities grow and learn more about coffee farming on our blog.
