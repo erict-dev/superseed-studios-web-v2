@@ -20,8 +20,8 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {
-          label: "Template Key",
-          name: "templateKey",
+          label: "Type",
+          name: "type",
           widget: "hidden",
           default: "services-item",
         }
@@ -34,8 +34,8 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {
-          label: "Template Key",
-          name: "templateKey",
+          label: "Type",
+          name: "type",
           widget: "hidden",
           default: "footer-social",
         }

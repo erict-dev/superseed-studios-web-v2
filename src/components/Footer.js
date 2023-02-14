@@ -1,61 +1,65 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 
-const data = [
-  {
-    title: 'Facebook',
-    link: 'https://www.facebook.com/superseedstudios',
-    icon: 'img/facebook-icon.svg',
-  },
-  {
-    title: 'Twitter',
-    link: 'https://www.twitter.com/superseedstudios',
-    icon: 'img/twitter-icon.svg',
-  },
-  {
-    title: 'Instagram',
-    link: 'https://www.instagram.com/superseedstudios',
-    icon: 'img/instagram-icon.svg',
-  },
-  {
-    title: 'Vimeo',
-    link: 'https://www.vimeo.com/superseedstudios',
-    icon: 'img/vimeo-icon.svg',
-  },
-  {
-    title: 'LinkedIn',
-    link: 'https://www.linkedin.com/company/superseed-studios',
-    icon: 'img/linkedin-icon.png',
-  },
-
-
-]
-
 const Footer = class extends React.Component {
   render() {
-    console.log('footer data', {data})
+    const { data } = this.props
+    const { edges: posts } = data.allMarkdownRemark
+
     return (
       <footer className="footer">
         <div className="footer-content content has-text-centered">
           <div className="container">
             <div className="columns">
               <div className="column social">
-                {data.map((d) => (
-                  <a title={d.title} href={d.link}>
-                    <img
-                      src={d.icon}
-                      alt={d.title}
-                      style={{ width: '1em', height: '1em' }}
-                    />
-                  </a>
-                ))}
+                {posts &&
+                    posts.map(({ node: post }) => (
+                      <a title={post.frontmatter.title} href={post.frontmatter.link}>
+                        <img
+                          src={post.frontmatter.icon.publicURL}
+                          alt={post.frontmatter.title}
+                          style={{ width: '1em', height: '1em' }}
+                        />
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </footer>
+          </footer>
     )
   }
 }
 
-export default Footer
+export default () => (
+  <StaticQuery
+    query={graphql`
+      query FooterSocialQuery {
+        allMarkdownRemark(
+          sort: { order: ASC, fields: [frontmatter___title] }
+          filter: { frontmatter: { type: { eq: "footer-social" } } }
+        ) {
+          edges {
+            node {
+              id
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                link
+                icon {
+                  publicURL
+                }
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <Footer data={data} />
+    )}
+  />
+)
+

@@ -1,5 +1,5 @@
 ---
-templateKey: 'services-item'
+type: 'services-item'
 title: VFX, Movies and Film
 image: /img/promo.svg
 ---

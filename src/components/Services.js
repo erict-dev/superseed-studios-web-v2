@@ -10,6 +10,7 @@ class Services extends React.Component {
         {posts &&
           posts.map(({ node: post }) => (
             <div className="service-item">
+              <p>{post.frontmatter.title}</p>
               <img alt={post.frontmatter.title} className="service-icon" src={post.frontmatter.image.publicURL}/>
               <div className="service-name">{post.frontmatter.title}</div>
             </div>
@@ -27,7 +28,7 @@ export default () => (
       query ServicesComponentQuery {
         allMarkdownRemark(
           sort: { order: ASC, fields: [frontmatter___title] }
-          filter: { frontmatter: { templateKey: { eq: "services-item" } } }
+          filter: { frontmatter: { type: { eq: "services-item" } } }
         ) {
           edges {
             node {
@@ -36,7 +37,6 @@ export default () => (
                 slug
               }
               frontmatter {
-                templateKey
                 title
                 image {
                   publicURL

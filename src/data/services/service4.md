@@ -1,5 +1,5 @@
 ---
-templateKey: 'services-item'
+type: 'services-item'
 title: Promos and Commercials
 image: /img/movie.svg
 ---
