@@ -1,0 +1,67 @@
+.work-container
+  background-color: gray
+  border-radius: 10px
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center right
+  min-height: 720px
+  position: relative
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
+  align-items: flex-end
+
+.work-container-content
+  width: 100%
+  background-color: #292929d6
+  color: white
+  z-index: 1
+  position: relative
+
+.work-title
+  font-size: 32px
+  font-weight: 900
+  color: white
+  font-family: 'Gilroy'
+  text-transform: 'uppercase'
+  line-height: 1.1
+  margin-bottom: 10px
+
+.work-subtitle
+  font-size: 18px
+  font-weight: 700
+
+.work-description
+  margin-top: 12px
+  margin-bottom: 12px
+  font-size: 14px
+
+.work-demo-button-container
+  margin-top: 20px
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: flex-start
+  cursor: pointer
+
+.play-icon
+  width: 30px
+  height: 30px
+  margin-right: 10px
+
+.play-icon-text
+  font-size: 12px
+
+.video-cover-background
+  position: absolute
+  width: 100% !important
+  right: 0
+
+@include mobile
+  .no-gap-mobile
+    .column
+      padding: 0
+
+  .work-container-content
+    padding: 2rem
+
