@@ -42,6 +42,23 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Link", name: "link", widget: "string"}
       - {label: "Icon", name: "icon", widget: file}
+  - name: "work"
+    editor:
+      preview: false
+    label: "Work"
+    folder: "src/pages/work"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "work-post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Subtitle", name: "subtitle", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Description", name: "description", widget: "text"}
+
+      - {label: "Featured Image", name: "featuredImage", widget: image}
+      - {label: "Featured Video", name: "featuredVideo", widget: file}
+      - {label: "Demo Video", name: "demoVideo", widget: object, fields: [{label: Platform, name: channel, widget: string}, {label: "Video ID", name: videoId, widget: string}]}
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
