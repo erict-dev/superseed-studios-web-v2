@@ -59,6 +59,19 @@ collections:
       - {label: "Featured Image", name: "featuredImage", widget: image}
       - {label: "Featured Video", name: "featuredVideo", widget: file}
       - {label: "Demo Video", name: "demoVideo", widget: object, fields: [{label: Platform, name: channel, widget: string}, {label: "Video ID", name: videoId, widget: string}]}
+  - name: "jobs"
+    editor:
+      preview: false
+    label: "Jobs"
+    folder: "src/pages/jobs/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "job-post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Job Posted Date", name: "date", widget: "datetime"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Email", name: "email", widget: "string"}
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
